@@ -10,6 +10,6 @@ Adobe Research, USA
 
 ---
 
-This repository is the official PyTorch implementation of Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model.
+This repository is the official implementation of Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model.
 
 # Updated Soon
