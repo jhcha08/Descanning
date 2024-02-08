@@ -2,11 +2,11 @@
 
 [Junghun Cha](https://github.com/jhcha08)<sup>1*</sup>, [Ali Haider](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1*</sup>, [Seoyun Yang](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Hoeyeong Jin](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Subin Yang](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>1</sup>, [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>2</sup>, [Jaehyoung Kim](https://github.com/crux153)<sup>1</sup>, [Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>3</sup>, [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>
 
-<sup>1</sup>Kyung Hee University, Republic of Korea
+<sup>1</sup> Kyung Hee University, Republic of Korea
 
-<sup>2</sup>Jashore University of Science and Technology, Bangladesh
+<sup>2</sup> Jashore University of Science and Technology, Bangladesh
 
-<sup>3</sup>Adobe Research, USA
+<sup>3</sup> Adobe Research, USA
 
 ---
 
