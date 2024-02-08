@@ -10,7 +10,7 @@
 
 ---
 
-This repository is the official implementation of Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model (Accepted to **AAAI24**).
+This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model" (Accepted to **AAAI24**).
 
 ## Abstract
 
