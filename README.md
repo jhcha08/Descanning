@@ -1,6 +1,6 @@
 # Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model
 
-[Junghun Cha](https://github.com/jhcha08)<sup>1*</sup>, [Ali Haider](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Seoyun Yang](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Hoeyeong Jin](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Subin Yang](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>1</sup>, [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>2</sup>, [Jaehyoung Kim](https://github.com/crux153)<sup>1</sup>, [Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>3</sup>, [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>
+[Junghun Cha](https://github.com/jhcha08)<sup>1*</sup>, [Ali Haider](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1*</sup>, [Seoyun Yang](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Hoeyeong Jin](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>, [Subin Yang](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>1</sup>, [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>2</sup>, [Jaehyoung Kim](https://github.com/crux153)<sup>1</sup>, [Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>3</sup>, [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>
 
 <sup>1</sup>Kyung Hee University, Republic of Korea
 
@@ -10,7 +10,7 @@
 
 ---
 
-This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model" (Accepted to **AAAI24**).
+This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model". (Accepted to **AAAI24**)
 
 ## Abstract
 
@@ -18,15 +18,15 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## DESCAN-18K Example Images
 
-![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c)
+![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c){: width="75%" height="75%"}
 
 ## DescanDiffusion Architecture
 
-![model_final](https://github.com/jhcha08/Descanning/assets/55647934/553407bc-75a4-482d-a800-105cbe7d567e)
+![model_final](https://github.com/jhcha08/Descanning/assets/55647934/553407bc-75a4-482d-a800-105cbe7d567e){: width="75%" height="75%"}
 
 ## Qualitative Comparisons
 
-![comparison_final2](https://github.com/jhcha08/Descanning/assets/55647934/7cebc99c-1417-479c-a858-2199905ed631)
+![comparison_final2](https://github.com/jhcha08/Descanning/assets/55647934/7cebc99c-1417-479c-a858-2199905ed631){: width="75%" height="75%"}
 
 ---
 
