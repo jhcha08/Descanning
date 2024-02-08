@@ -1,7 +1,8 @@
 # Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model
 
 [Junghun Cha](https://github.com/jhcha08)1<sup>*</sup>
-, [Ali Haider](), [Seoyun Yang](), [Hoeyeong Jin](), [Subin Yang](), [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en), [Jaehyoung Kim](https://github.com/crux153), [Soo Ye Kim](https://sites.google.com/view/sooyekim), [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)
+, [Ali Haider]()1<sup>*</sup>
+, [Seoyun Yang](), [Hoeyeong Jin](), [Subin Yang](), [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en), [Jaehyoung Kim](https://github.com/crux153), [Soo Ye Kim](https://sites.google.com/view/sooyekim), [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)
 
 Kyung Hee University, Republic of Korea
 
