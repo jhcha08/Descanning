@@ -14,7 +14,7 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## Model Architecture
 
-
+![model_final](https://github.com/jhcha08/Descanning/assets/55647934/553407bc-75a4-482d-a800-105cbe7d567e)
 
 ---
 
