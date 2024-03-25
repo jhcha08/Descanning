@@ -12,11 +12,11 @@ This repository is the official PyTorch implementation of "Descanning: From Scan
 
 [Paper](https://www.arxiv.org/abs/2402.05350)
 
-## Dataset
+## Dataset: DESCAN-18K
 
 You can download our dataset DESCAN-18K from these links: [scan1](https://drive.google.com/file/d/1Uanl0NPtVxVOwGb3yzGviopW-j0Gktc6/view?usp=sharing), [scan2](https://drive.google.com/file/d/16DxzIizRdxzrul1T-dgoIzhDn9szFpvK/view?usp=sharing), [clean](https://drive.google.com/file/d/1uB8rFMOjokdYz2ynSPHnxqgqpOAEW707/view?usp=sharing), [validation and test](https://drive.google.com/file/d/12txQIib3ycHcl4f8DscziVtRdN0qZZw1/view?usp=sharing)
 
-Please following detailed instructions [here]().
+Please follow detailed instructions [here]().
 
 ## Codes
 
