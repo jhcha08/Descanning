@@ -42,7 +42,7 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## Citation
 
-Consider citing us if you find our paper useful in your research!
+If our paper is useful to your research, please consider citing it! 😊
 
 ```
 @article{cha2024descanning,
