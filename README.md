@@ -46,15 +46,11 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 Consider citing us if you find our paper useful in your research!
 
-
-> @article{cha2024descanning,
-> 
->   title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
-> 
->   author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
-> 
->   journal={arXiv preprint arXiv:2402.05350},
-> 
->   year={2024}
-> }
-
+```
+@article{cha2024descanning,
+        title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
+        author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
+        journal={arXiv preprint arXiv:2402.05350},
+        year={2024}
+}
+```
