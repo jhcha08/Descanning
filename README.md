@@ -45,7 +45,9 @@ A significant volume of analog information, i.e., documents and images, have bee
 ## Updates
 
 🎉 [2024-03-25] Our dataset DESCAN-18K is released.
+
 🎉 [2024-02-08] Our paper is uploaded on arXiv.
+
 🎉 [2023-12-09] Our paper is accepted by AAAI 2024.
 
 ---
@@ -54,11 +56,11 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 Consider citing us if you find our paper useful in your research!
 
-'''
-@article{cha2024descanning,
-  title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
-  author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
-  journal={arXiv preprint arXiv:2402.05350},
-  year={2024}
-}
-'''
+
+> @article{cha2024descanning,
+>   title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
+>   author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
+>   journal={arXiv preprint arXiv:2402.05350},
+>   year={2024}
+> }
+
