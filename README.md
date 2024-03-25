@@ -48,7 +48,8 @@ If this repository is useful to your research, please consider citing our works!
 ```
 @article{cha2024descanning,
         title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
-        author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
+        author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin
+                and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
         journal={arXiv preprint arXiv:2402.05350},
         year={2024}
 }
