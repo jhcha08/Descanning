@@ -61,7 +61,7 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ![comparison_final2](https://github.com/jhcha08/Descanning/assets/55647934/7cebc99c-1417-479c-a858-2199905ed631)
 
-## Updates
+## News
 
 📥 [2024-03-25] Our dataset DESCAN-18K is released.  
 📃 [2024-02-08] Our paper is uploaded on arXiv.  
