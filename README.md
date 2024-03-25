@@ -24,7 +24,8 @@ After downloading the dataset, please follow detailed instructions in [here](htt
 
 ```
 python >= 3.8  
-torch >= 1.10.2  
+torch >= 1.10.2
+torchvision >= 0.11.3  
 tqdm >= 4.62.2  
 numpy >= 1.22.1  
 opencv-python >= 4.5.4.60  
