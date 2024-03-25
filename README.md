@@ -24,23 +24,15 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## DESCAN-18K Example Images
 
----
-
 ![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c)
 
 ## DescanDiffusion Architecture
-
----
 
 ![model_final](https://github.com/jhcha08/Descanning/assets/55647934/553407bc-75a4-482d-a800-105cbe7d567e)
 
 ## Qualitative Comparisons
 
----
-
 ![comparison_final2](https://github.com/jhcha08/Descanning/assets/55647934/7cebc99c-1417-479c-a858-2199905ed631)
-
----
 
 ## Updates
 
@@ -49,8 +41,6 @@ A significant volume of analog information, i.e., documents and images, have bee
 🎉 [2024-02-08] Our paper is uploaded on arXiv.
 
 🎉 [2023-12-09] Our paper is accepted by AAAI 2024.
-
----
 
 ## Citation
 
