@@ -37,7 +37,7 @@ scikit-image >= 0.16.2
 ```
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Training
