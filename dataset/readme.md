@@ -6,31 +6,31 @@
 
 3. Organize the training, validation, and test datasets as follows:
 
-dataset/
-├──train/
-    ├── clean/
-    │   ├── image1.tif
-    │   ├── image2.tif
-    │   ├── ...
-    └── scan/
-        ├── image1.tif
-        ├── image2.tif
-        ├── ...
-├──valid/
-    ├── clean/
-    │   ├── image1.tif
-    │   ├── image2.tif
-    │   ├── ...
-    └── scan/
-        ├── image1.tif
-        ├── image2.tif
-        ├── ...
-├──test/
-    ├── clean/
-    │   ├── image1.tif
-    │   ├── image2.tif
-    │   ├── ...
-    └── scan/
-        ├── image1.tif
-        ├── image2.tif
-        ├── ...
+dataset/  
+├──train/  
+    ├── clean/  
+    │   ├── image1.tif  
+    │   ├── image2.tif  
+    │   ├── ...  
+    └── scan/  
+        ├── image1.tif  
+        ├── image2.tif  
+        ├── ...  
+├──valid/  
+    ├── clean/  
+    │   ├── image1.tif  
+    │   ├── image2.tif  
+    │   ├── ...  
+    └── scan/  
+        ├── image1.tif  
+        ├── image2.tif  
+        ├── ...  
+├──test/  
+    ├── clean/  
+    │   ├── image1.tif  
+    │   ├── image2.tif  
+    │   ├── ...  
+    └── scan/  
+        ├── image1.tif  
+        ├── image2.tif  
+        ├── ...  
