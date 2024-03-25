@@ -6,7 +6,7 @@
 <sup>2</sup> Jashore University of Science and Technology, Bangladesh  
 <sup>3</sup> Adobe Research, USA  
 
-This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model". (Accepted to **AAAI24**)
+This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model".
 
 [[Paper](https://www.arxiv.org/abs/2402.05350)]  [[Dataset](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md)]   [[Pre-trained Model](https://drive.google.com/file/d/1neAS5Sh97dlxTFrh9Sn4-kAYvTGVCe0q/view?usp=sharing)]
 
