@@ -27,12 +27,12 @@ python >= 3.8
 torch >= 1.10.2  
 tqdm >= 4.62.2  
 numpy >= 1.22.1  
-cv2 (opencv-python) >= 4.5.4.60  
+opencv-python >= 4.5.4.60  
 natsort >= 8.1.0  
 matplotlib >= 3.4.3  
-PIL (Pillow) >= 9.4.0  
+Pillow >= 9.4.0  
 scipy >= 1.7.3  
-skimage (scikit-image) >= 0.16.2  
+scikit-image >= 0.16.2  
 ```
 
 ## Abstract
