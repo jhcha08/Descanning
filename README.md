@@ -42,9 +42,11 @@ pip install requirements.txt
 
 ### Training
 
+To train DescanDiffusion, it is needed to train two modules: Color Encoder and Conditional DDPM.
+
 **Color Encoder (Global Color Correction)**
 
-**Diffusion (Local Generative Refinement)**
+**Conditional DDPM (Local Generative Refinement)**
 
 ### Testing
 
