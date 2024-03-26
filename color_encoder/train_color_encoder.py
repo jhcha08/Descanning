@@ -1,5 +1,6 @@
 import os
 import sys
+
 import random
 import numpy as np
 from datetime import datetime
@@ -21,9 +22,7 @@ def main(logging=False):
 
     train_path = '../dataset/train'
     valid_path = '../dataset/valid'
-    batch = 8
-    num_epochs = 10
-    save_epoch = 2
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Device: ", device)
 
@@ -34,13 +33,19 @@ def main(logging=False):
     torch.cuda.manual_seed_all(seed)
     print('Random seed: {}'.format(seed))
 
+    batch_size = 8
+    num_epochs = 10
+    save_epoch = 2
+    lr = 3e-4
+    weight_decay = 1e-5
+
     color_encoder_dataset = ColorEncoderDataset(train_path)
-    train_dataloader = DataLoader(color_encoder_dataset, batch_size=batch, shuffle=True, drop_last=True, num_workers=8)
+    train_dataloader = DataLoader(color_encoder_dataset, batch_size=batch_size, shuffle=True, drop_last=True, num_workers=8)
     print('The number of Data: ', len(color_encoder_dataset))
 
     model = initialize_model(device)
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
+    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
 
     model = train(model, train_dataloader, valid_path, criterion, optimizer, device, num_epochs, save_epoch)
 
@@ -54,8 +59,3 @@ def main(logging=False):
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
