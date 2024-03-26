@@ -8,11 +8,11 @@
 
 This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model".
 
+We will open our dataset DESCAN-18K and pre-trained models as public soon! Please kindly wait for updates.
+
 [[Paper](https://www.arxiv.org/abs/2402.05350)]
 
 ## 💾 Dataset: DESCAN-18K
-
-We will open our dataset DESCAN-18K as public soon! Please kindly wait for updates.
 
 ![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c)
 
