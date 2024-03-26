@@ -2,7 +2,7 @@
 
 [Junghun Cha](https://www.linkedin.com/in/junghun-cha-5a102b1bb/)<sup>1*</sup>, [Ali Haider]()<sup>1*</sup>, [Seoyun Yang](https://kr.linkedin.com/in/seoyun-yang-9b1323218)<sup>1</sup>, [Hoeyeong Jin](https://www.linkedin.com/in/hoeyeong-jin-91987026b/)<sup>1</sup>, [Subin Yang]()<sup>1</sup>, [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>2</sup>, [Jaehyoung Kim](https://github.com/crux153)<sup>1</sup>, [Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>3</sup>, [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>
 
-<sup>1</sup> Kyung Hee University, Republic of Korea  
+<sup>1</sup> Kyung Hee University, MLVC Lab., Republic of Korea  
 <sup>2</sup> Jashore University of Science and Technology, Bangladesh  
 <sup>3</sup> Adobe Research, USA  
 
