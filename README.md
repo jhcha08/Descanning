@@ -18,9 +18,7 @@ You can download our dataset DESCAN-18K from these links: [scan1](https://drive.
 
 After downloading the dataset, please follow detailed instructions [here](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md).
 
-## Codes
-
-### Requirements
+## Requirements
 
 ```
 python >= 3.8  
@@ -40,23 +38,23 @@ scikit-image >= 0.16.2
 pip install -r requirements.txt
 ```
 
-### Training
+## Training
 
 To train DescanDiffusion, it is needed to train two modules: Color Encoder and Conditional DDPM.
 
-**Color Encoder (Global Color Correction)**
+### Color Encoder (Global Color Correction)
 
 1. Configure settings in ```train_color_encoder.py```. (e.g. dataset path, batch size, epochs).
-   (If you want to log the training process, set ```logging=True```)   
+2. If you want to log the training process, set ```logging=True```.  
 3. Execute the below code to train the color encoder.
    ```
    python3 train_color_encoder.py
    ```
 4. The last saved model will be ```color_encoder.h5```. It will used to train the conditional DDPM (below part).
 
-**Conditional DDPM (Local Generative Refinement)**
+### Conditional DDPM (Local Generative Refinement)
 
-### Testing
+## Testing
 
 ---
 
