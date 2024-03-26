@@ -10,7 +10,7 @@ This repository is the official PyTorch implementation of "Descanning: From Scan
 
 [[Paper](https://www.arxiv.org/abs/2402.05350)]  [[Dataset](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md)]   [[Pre-trained Models](https://drive.google.com/file/d/1neAS5Sh97dlxTFrh9Sn4-kAYvTGVCe0q/view?usp=sharing)]
 
-## Dataset: DESCAN-18K
+## 💾 Dataset: DESCAN-18K
 
 ![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c)
 
@@ -18,7 +18,7 @@ You can download our dataset DESCAN-18K from these links: [scan1](https://drive.
 
 After downloading the dataset, please follow detailed instructions [here](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md).
 
-## Requirements
+## 🔭 Requirements
 
 ```
 python >= 3.8  
@@ -72,7 +72,7 @@ To train DescanDiffusion, it is needed to train two modules: Color Encoder and C
    ```
    python3 diffusion/sampling_diffusion.py
    ```
-3. The inference images will be saved into ```test_DescanDiffusion```.
+3. The inferred images (i.e., **descanned images**) will be saved into ```test_DescanDiffusion```.
 
 ---
 
