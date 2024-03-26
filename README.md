@@ -91,7 +91,7 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## News
 
-✨ [2024-03-25] Our codes and pre-trained models are released.  
+✨ [2024-03-26] Our codes and pre-trained models are released.  
 📥 [2024-03-25] Our dataset DESCAN-18K is released.  
 📃 [2024-02-08] Our paper is uploaded on arXiv.  
 🎉 [2023-12-09] Our paper is accepted by AAAI 2024.  
