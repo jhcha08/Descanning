@@ -8,7 +8,7 @@
 
 This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model".
 
-[[Paper](https://www.arxiv.org/abs/2402.05350)]  [[Dataset](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md)]   [[Pre-trained Model](https://drive.google.com/file/d/1neAS5Sh97dlxTFrh9Sn4-kAYvTGVCe0q/view?usp=sharing)]
+[[Paper](https://www.arxiv.org/abs/2402.05350)]  [[Dataset](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md)]   [[Pre-trained Models](https://drive.google.com/file/d/1neAS5Sh97dlxTFrh9Sn4-kAYvTGVCe0q/view?usp=sharing)]
 
 ## Dataset: DESCAN-18K
 
@@ -38,7 +38,7 @@ scikit-image >= 0.16.2
 pip install -r requirements.txt
 ```
 
-## Training
+## 💫 Training
 
 To train DescanDiffusion, it is needed to train two modules: Color Encoder and Conditional DDPM.
 
@@ -63,7 +63,16 @@ To train DescanDiffusion, it is needed to train two modules: Color Encoder and C
    ```
 3. The last saved model will become ```DescanDiffusion.pth```. It will used to infer scanned images of the testing set.
 
-## Testing
+## 💫 Testing
+
+**Note** You can test our DescanDiffusion directly by downloading [pre-trained models](https://drive.google.com/file/d/1neAS5Sh97dlxTFrh9Sn4-kAYvTGVCe0q/view?usp=sharing). (```color_encoder.h5```, ```DescanDiffusion.pth```)
+
+1. Configure settings in ```diffusion/sampling_diffusion.py```. (e.g. testing set path, pre-trained models path, steps).  
+2. Execute the below code to test our DescanDiffusion.
+   ```
+   python3 diffusion/sampling_diffusion.py
+   ```
+3. The inference images will be saved into ```test_DescanDiffusion```.
 
 ---
 
