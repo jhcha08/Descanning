@@ -16,7 +16,7 @@ This repository is the official PyTorch implementation of "Descanning: From Scan
 
 You can download our dataset DESCAN-18K from these links: [scan1](https://drive.google.com/file/d/1Uanl0NPtVxVOwGb3yzGviopW-j0Gktc6/view?usp=sharing), [scan2](https://drive.google.com/file/d/16DxzIizRdxzrul1T-dgoIzhDn9szFpvK/view?usp=sharing), [clean](https://drive.google.com/file/d/1uB8rFMOjokdYz2ynSPHnxqgqpOAEW707/view?usp=sharing), [validation and test](https://drive.google.com/file/d/12txQIib3ycHcl4f8DscziVtRdN0qZZw1/view?usp=sharing)
 
-After downloading the dataset, please follow detailed instructions in [here](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md).
+After downloading the dataset, please follow detailed instructions [here](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md).
 
 ## Codes
 
@@ -47,12 +47,12 @@ To train DescanDiffusion, it is needed to train two modules: Color Encoder and C
 **Color Encoder (Global Color Correction)**
 
 1. Configure settings in ```train_color_encoder.py```. (e.g. dataset path, batch size, epochs).
-2. If you want to log the training process, set ```logging=True```
-3. Execute
+   (If you want to log the training process, set ```logging=True```)   
+3. Execute the below code to train the color encoder.
    ```
    python3 train_color_encoder.py
    ```
-4. The last saved model will be "color_encoder.h5". It will used to train the conditional DDPM (below part).
+4. The last saved model will be ```color_encoder.h5```. It will used to train the conditional DDPM (below part).
 
 **Conditional DDPM (Local Generative Refinement)**
 
