@@ -8,15 +8,17 @@
 
 This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model".
 
-[[Paper](https://www.arxiv.org/abs/2402.05350)]  [[Dataset](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md)]   [[Pre-trained Models](https://drive.google.com/file/d/1neAS5Sh97dlxTFrh9Sn4-kAYvTGVCe0q/view?usp=sharing)]
+[[Paper](https://www.arxiv.org/abs/2402.05350)]
 
 ## 💾 Dataset: DESCAN-18K
 
 ![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c)
 
+<!--
 You can download our dataset DESCAN-18K from these links: [scan1](https://drive.google.com/file/d/1Uanl0NPtVxVOwGb3yzGviopW-j0Gktc6/view?usp=sharing), [scan2](https://drive.google.com/file/d/16DxzIizRdxzrul1T-dgoIzhDn9szFpvK/view?usp=sharing), [clean](https://drive.google.com/file/d/1uB8rFMOjokdYz2ynSPHnxqgqpOAEW707/view?usp=sharing), [validation and test](https://drive.google.com/file/d/12txQIib3ycHcl4f8DscziVtRdN0qZZw1/view?usp=sharing)
 
 After downloading the dataset, please follow detailed instructions [here](https://github.com/jhcha08/Descanning/blob/main/dataset/readme.md).
+-->
 
 ## 🔭 Requirements
 
@@ -91,7 +93,7 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## News
 
-✨ [2024-03-26] Our codes and pre-trained models are released.  
+✨ [2024-03-26] Our codes are released.  
 📥 [2024-03-25] Our dataset DESCAN-18K is released.  
 📃 [2024-02-08] Our paper is uploaded on arXiv.  
 🎉 [2023-12-09] Our paper is accepted by AAAI 2024.  
