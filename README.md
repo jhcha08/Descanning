@@ -45,7 +45,7 @@ To train DescanDiffusion, it is needed to train two modules: Color Encoder and C
 ### Color Encoder (Global Color Correction)
 
 1. Configure settings in ```train_color_encoder.py```. (e.g. dataset path, batch size, epochs).
-   - If you want to log the training process, set ```logging=True```.  
+ - If you want to log the training process, set ```logging=True```.  
 2. Execute the below code to train the color encoder.
    ```
    python3 train_color_encoder.py
@@ -55,8 +55,8 @@ To train DescanDiffusion, it is needed to train two modules: Color Encoder and C
 ### Conditional DDPM (Local Generative Refinement)
 
 1. Configure settings in ```train_diffusion.py```. (e.g. dataset path, batch size, epochs, steps).  
-   - If you want to log the training process, set ```logging=True```.  
-   - If you want to adjust synthetic data generation probability, adjust ```distort_threshold```. In the paper, it is 0.25. (i.e., we used 25% synthetic data.)  
+ - If you want to log the training process, set ```logging=True```.  
+ - If you want to adjust synthetic data generation probability, adjust ```distort_threshold```. (It is 0.25 in the paper).  
 
 ## Testing
 
