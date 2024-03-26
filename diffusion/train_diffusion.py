@@ -1,12 +1,12 @@
 import os
 import sys
+
 import random
 import numpy as np
 from datetime import datetime
 
 import torch
-import torch.nn as nn
-import torch.optim as optim
+from torch import nn, optim
 from torch.utils.data import DataLoader
 from torchvision import models
 
@@ -21,9 +21,10 @@ def main(logging=False):
         time = datetime.now().strftime("%y%m%d_%H%M%S")
         sys.stdout = open("log_DescanDiffusion_{}.txt".format(time), "w")
 
-    train_path = '/home/hallasan/nvme0n1/descanning_dataset/train'
-    valid_path = '/home/hallasan/nvme0n1/descanning_dataset/valid_small'
-    color_encoder_path = '/home/hallasan/junghun/descanning/weights_final/color_encoder.h5'
+    train_path = '../dataset/train'
+    valid_path = '../dataset/valid'
+    color_encoder_path = '../weights_final/color_encoder.h5'
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     gpu_ids = [0, 1, 2, 3]
     print("Device: ", device)
@@ -44,7 +45,7 @@ def main(logging=False):
     num_epochs = 5
     save_epoch = 1
     epoch_done = 0
-    learning_rate = 0.0001
+    lr = 0.0001
 
     diffusion_dataset = DiffusionDataset(train_path, min_beta, max_beta, steps, distort_threshold)
     train_dataloader = DataLoader(diffusion_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
@@ -61,7 +62,7 @@ def main(logging=False):
     model = nn.DataParallel(unet, device_ids=gpu_ids)
 
     criterion = nn.L1Loss()
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = optim.Adam(model.parameters(), lr=lr)
 
     model = train(model, color_encoder, optimizer, criterion, epoch_done, valid_path, 
             train_dataloader, diffusion_dataset, num_epochs, save_epoch, sampling_steps, device)
