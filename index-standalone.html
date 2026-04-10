@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESCAN-18K Dataset</title>
+  <style>
+    :root {
+      --bg: #f5f0e6;
+      --bg-2: #fbf8f2;
+      --paper: rgba(255, 255, 255, 0.9);
+      --paper-strong: #ffffff;
+      --ink: #181714;
+      --muted: #5f5a52;
+      --line: #ddd4c7;
+      --accent: #0c6d63;
+      --accent-2: #b7502d;
+      --shadow: 0 22px 48px rgba(64, 47, 24, 0.10);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --sans: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+      --mono: "Cascadia Mono", "Consolas", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(183, 80, 45, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(12, 109, 99, 0.16), transparent 26%),
+        linear-gradient(180deg, #faf6ed 0%, #f5f0e6 48%, #efe7da 100%);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    code, pre {
+      font-family: var(--mono);
+    }
+
+    code {
+      background: rgba(12, 109, 99, 0.08);
+      border-radius: 6px;
+      padding: 0.12rem 0.32rem;
+      font-size: 0.95em;
+    }
+
+    .page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 42px 40px 36px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(251, 248, 242, 0.84));
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -120px;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(12, 109, 99, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      max-width: 900px;
+      font-size: 1.08rem;
+      color: #25221d;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .hero-links a.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .hero-links a.secondary {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 24px;
+      margin-top: 24px;
+      align-items: start;
+    }
+
+    .main {
+      display: grid;
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .side {
+      position: sticky;
+      top: 18px;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    .toc {
+      padding: 22px;
+    }
+
+    .toc-title {
+      margin: 0 0 14px;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+    }
+
+    .toc-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc-list a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc-list a:hover {
+      border-color: rgba(12, 109, 99, 0.4);
+      background: #ffffff;
+    }
+
+    .figure {
+      margin-top: 18px;
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    .figure img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .figure figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul, ol {
+      margin: 12px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    thead th {
+      background: rgba(12, 109, 99, 0.08);
+      font-weight: 700;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    pre {
+      margin: 16px 0 0;
+      padding: 18px;
+      overflow-x: auto;
+      border-radius: 16px;
+      background: #1e2329;
+      color: #f7f8fa;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent-2);
+      border-radius: 12px;
+      background: rgba(183, 80, 45, 0.08);
+      color: #4a3a30;
+    }
+
+    .lab {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .lab img {
+      width: 72px;
+      height: 72px;
+      padding: 8px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 18px, 1240px);
+        padding-top: 12px;
+      }
+
+      .hero,
+      .panel {
+        padding: 22px 18px;
+      }
+
+      th, td {
+        padding: 10px 10px;
+        font-size: 0.95rem;
+      }
+
+      .hero-links a {
+        width: 100%;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      pre {
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>DESCAN-18K</h1>
+      <p class="lead">
+        <strong>DESCAN-18K</strong> is a dataset for the <strong>descanning</strong> task.
+        This dataset contains <strong>18,360 paired real scanned/original images</strong> for recovering original
+        digital images from their real scanned counterparts.
+      </p>
+      <div class="hero-links">
+        <a class="primary" href="https://arxiv.org/abs/2402.05350" target="_blank" rel="noreferrer">Paper</a>
+        <a class="secondary" href="https://github.com/jhcha08/Descanning" target="_blank" rel="noreferrer">Code</a>
+        <a class="secondary" href="https://mlvc.khu.ac.kr/" target="_blank" rel="noreferrer">Lab</a>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main class="main">
+        <section class="panel" id="overview">
+          <h2>Overview</h2>
+          <p>
+            <strong>DESCAN-18K</strong> is a dataset for the <strong>descanning</strong> task: recovering the original
+            digital image from a real scanned page. This dataset supports that task with large-scale
+            <strong>real scanned/original pairs</strong> collected from real scanners and original digital pages.
+          </p>
+          <p>DESCAN-18K's key characteristics:</p>
+          <ul>
+            <li><strong>Real paired data</strong>: each <code>scan/clean</code> pair comes from a real scanned page and its corresponding original digital page</li>
+            <li><strong>New task setting</strong>: the work explicitly defines <strong>descanning</strong> as its own restoration problem</li>
+            <li><strong>Cross-scanner evaluation</strong>: the test set uses scanner models not seen during training</li>
+            <li><strong>Mixed degradations</strong>: color distortion, bleed-through, halftone, texture distortion, and scanner noise often co-occur</li>
+            <li><strong>Scale</strong>: <code>18,360</code> aligned pairs across four real-world scanners</li>
+            <li><strong>Format</strong>: RGB TIFF images at <code>1024 x 1024</code></li>
+            <li><strong>Content diversity</strong>: photographs, graphics, layouts, and text-heavy magazine pages</li>
+          </ul>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Folder</th>
+                <th>Contents</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>scan/</code></td>
+                <td>Real scanned page image (model input)</td>
+              </tr>
+              <tr>
+                <td><code>clean/</code></td>
+                <td>Corresponding original digital page image (target)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="note">
+            The core dataset consists of <strong>real scanned/original pairs</strong>. Synthetic data appears only as an
+            additional training augmentation strategy for the <code>DescanDiffusion+</code> model variant.
+          </p>
+
+          <figure class="figure">
+            <img src="assets/degradation-examples.png" alt="DESCAN-18K degradation examples">
+            <figcaption>Examples of mixed degradations in DESCAN-18K.</figcaption>
+          </figure>
+        </section>
+
+        <section class="panel" id="descanning-process-overview">
+          <h2>Descanning Process Overview</h2>
+          <p>
+            The figure below shows the descanning process: a digital image is printed, scanned, and then restored back
+            toward its original digital form through descanning.
+          </p>
+          <figure class="figure">
+            <img src="assets/descanning-task-overview.png" alt="Descanning process overview">
+            <figcaption>Digital image to printed/scanned image to restored output.</figcaption>
+          </figure>
+        </section>
+
+        <section class="panel" id="dataset-statistics">
+          <h2>Dataset Statistics</h2>
+          <p>The table below follows the paper split sizes for this dataset publication.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Scanners</th>
+                <th>Pairs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Train</td>
+                <td>scanner3, scanner4</td>
+                <td>17,640</td>
+              </tr>
+              <tr>
+                <td>Valid</td>
+                <td>scanner3, scanner4</td>
+                <td>360</td>
+              </tr>
+              <tr>
+                <td>Test</td>
+                <td>scanner1, scanner2</td>
+                <td>360</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td>-</td>
+                <td><strong>18,360</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="panel" id="scanner-ids">
+          <h2>Scanner IDs</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Scanner Model</th>
+                <th>Split</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>scanner1</td>
+                <td>Fuji Xerox ApeosPort C2060</td>
+                <td>Test only</td>
+              </tr>
+              <tr>
+                <td>scanner2</td>
+                <td>Canon imagePRESS C650</td>
+                <td>Test only</td>
+              </tr>
+              <tr>
+                <td>scanner3</td>
+                <td>Canon imageRUNNER ADVANCE 6265</td>
+                <td>Train / Valid</td>
+              </tr>
+              <tr>
+                <td>scanner4</td>
+                <td>Plustek OpticBook 4800</td>
+                <td>Train / Valid</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Training and validation use <code>scanner3</code> and <code>scanner4</code>. The test set uses
+            <code>scanner1</code> and <code>scanner2</code>, which are unseen during training.
+          </p>
+        </section>
+
+        <section class="panel" id="data-structure">
+          <h2>Data Structure</h2>
+          <pre>DESCAN-18K-dataset/
+|-- Train/
+|   |-- scan/    # real scanned page images used as model inputs
+|   `-- clean/   # aligned original digital target images
+|-- Valid/
+|   |-- scan/    # validation scanned images
+|   `-- clean/   # validation original targets
+|-- Test/
+|   |-- scan/    # unseen-scanner scanned images for evaluation
+|   `-- clean/   # corresponding original targets
+`-- README.md</pre>
+
+          <p>Each file in <code>scan/</code> has a same-named counterpart in <code>clean/</code>.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Path</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Train/scan</code></td>
+                <td>Degraded real scanned inputs for training</td>
+              </tr>
+              <tr>
+                <td><code>Train/clean</code></td>
+                <td>Paired original digital targets for training</td>
+              </tr>
+              <tr>
+                <td><code>Valid/scan</code></td>
+                <td>Scanned validation inputs</td>
+              </tr>
+              <tr>
+                <td><code>Valid/clean</code></td>
+                <td>Paired validation targets</td>
+              </tr>
+              <tr>
+                <td><code>Test/scan</code></td>
+                <td>Scanned test inputs from unseen scanners</td>
+              </tr>
+              <tr>
+                <td><code>Test/clean</code></td>
+                <td>Paired test targets</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="panel" id="file-naming">
+          <h2>File Naming</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Split</th>
+                <th>Convention</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Train/</code></td>
+                <td>Source-document style</td>
+                <td><code>BookOfMaking.00001.01.tif</code></td>
+              </tr>
+              <tr>
+                <td><code>Valid/</code></td>
+                <td>Scanner-based</td>
+                <td><code>scanner03_000.tif</code></td>
+              </tr>
+              <tr>
+                <td><code>Test/</code></td>
+                <td>Scanner-based</td>
+                <td><code>scanner01_000.tif</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>All images are stored as TIFF files (<code>.tif</code>).</p>
+        </section>
+
+        <section class="panel" id="source-and-construction">
+          <h2>Source and Construction</h2>
+          <p>
+            DESCAN-18K was built from <strong>11 magazine types</strong> from the Raspberry Pi Foundation, licensed under
+            <code>CC BY-NC-SA 3.0</code>. The pages contain diverse image and text content and had preservation durations
+            ranging from a few days to seven years.
+          </p>
+          <p>The construction pipeline is as follows:</p>
+          <ol>
+            <li>Magazine pages were manually scanned with four scanner models.</li>
+            <li>Corresponding original PDF pages were collected online.</li>
+            <li>Both scanned and original data were converted to RGB TIFF.</li>
+            <li>Page pairs were aligned with <strong>AKAZE</strong> registration.</li>
+            <li>Poor matches were manually filtered.</li>
+            <li>The aligned pages were randomly cropped to <code>1024 x 1024</code>.</li>
+            <li>The cropped pairs were registered again with AKAZE to secure aligned patch pairs.</li>
+          </ol>
+          <p class="note">
+            Scanned TIFF images were calibrated under the <strong>IT 8.7 / ISO 12641</strong> standard.
+          </p>
+        </section>
+
+        <section class="panel" id="degradation-types">
+          <h2>Degradation Types</h2>
+          <p>DESCAN-18K includes six representative degradation types that often appear in combination:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Degradation</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Color transition</td>
+                <td>Global color fading, saturation change, or altered color tone</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>External noise</td>
+                <td>Dots or localized stains caused by foreign substances</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Internal noise</td>
+                <td>Scanner-generated crumpled, curved, or laser-like artifacts</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Bleed-through effect</td>
+                <td>Back-page contents becoming visible in the scan</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Texture distortion</td>
+                <td>Global physical textures or wrinkle-like artifacts</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Halftone pattern</td>
+                <td>Printing-induced CMYK dot structures</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="panel" id="intended-use">
+          <h2>Intended Use</h2>
+          <p>DESCAN-18K is intended for <strong>paired descanning research and evaluation</strong>:</p>
+          <ul>
+            <li><strong>Input:</strong> scanned image from <code>scan/</code></li>
+            <li><strong>Target:</strong> original image from <code>clean/</code></li>
+          </ul>
+          <p>
+            It can be used for developing, benchmarking, and analyzing methods that recover original digital images from
+            real scanned pages. The scanner-based split is especially useful for evaluating generalization to unseen
+            scanner types.
+          </p>
+        </section>
+
+        <section class="panel" id="reported-benchmark-results">
+          <h2>Reported Benchmark Results</h2>
+          <p>The following results are reported in Table 1 for the original DESCAN-18K testing set.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>PSNR (dB)</th>
+                <th>SSIM</th>
+                <th>LPIPS</th>
+                <th>FID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Pix2PixHD</td><td>20.58</td><td>0.8014</td><td>0.057</td><td>18.30</td></tr>
+              <tr><td>CycleGAN</td><td>21.52</td><td>0.8417</td><td>0.050</td><td>16.99</td></tr>
+              <tr><td>HDRUNet</td><td>20.90</td><td>0.8480</td><td>0.055</td><td>16.42</td></tr>
+              <tr><td>Restormer</td><td>20.37</td><td>0.7915</td><td>0.152</td><td>25.57</td></tr>
+              <tr><td>ESDNet</td><td>21.22</td><td>0.8418</td><td>0.088</td><td>15.24</td></tr>
+              <tr><td>NAFNet</td><td>22.03</td><td>0.8538</td><td>0.048</td><td>16.00</td></tr>
+              <tr><td>OPR*</td><td>18.09</td><td>0.7249</td><td>0.158</td><td>21.45</td></tr>
+              <tr><td>DPS*</td><td>17.93</td><td>0.7354</td><td>0.150</td><td>41.64</td></tr>
+              <tr><td>Clear Scan</td><td>21.46</td><td>0.8183</td><td>0.054</td><td>18.09</td></tr>
+              <tr><td>Adobe Scan</td><td>15.80</td><td>0.6153</td><td>0.141</td><td>23.55</td></tr>
+              <tr><td>Microsoft Lens</td><td>20.48</td><td>0.8013</td><td>0.056</td><td>18.97</td></tr>
+              <tr><td>DescanDiffusion</td><td>23.40</td><td>0.8717</td><td><strong>0.042</strong></td><td><strong>13.51</strong></td></tr>
+              <tr><td>DescanDiffusion+</td><td><strong>23.43</strong></td><td><strong>0.8736</strong></td><td>0.044</td><td>14.60</td></tr>
+            </tbody>
+          </table>
+          <p><code>*</code> Methods with an asterisk are official pre-trained versions used by the authors.</p>
+        </section>
+
+        <section class="panel" id="citation">
+          <h2>Citation</h2>
+          <p>If you use DESCAN-18K in your research, please cite:</p>
+          <pre>@article{cha2024descanning,
+  title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
+  author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin
+          and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
+  journal={arXiv preprint arXiv:2402.05350},
+  year={2024}
+}</pre>
+        </section>
+
+        <section class="panel" id="references">
+          <h2>References</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Resource</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paper</td>
+                <td><a href="https://arxiv.org/abs/2402.05350" target="_blank" rel="noreferrer">https://arxiv.org/abs/2402.05350</a></td>
+              </tr>
+              <tr>
+                <td>Code</td>
+                <td><a href="https://github.com/jhcha08/Descanning" target="_blank" rel="noreferrer">https://github.com/jhcha08/Descanning</a></td>
+              </tr>
+              <tr>
+                <td>Lab</td>
+                <td><a href="https://mlvc.khu.ac.kr/" target="_blank" rel="noreferrer">https://mlvc.khu.ac.kr/</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="lab">
+            <img src="assets/enc-lab-icon.png" alt="Efficient Neural Computing Lab icon">
+            <p>Efficient Neural Computing Lab (ENC Lab), School of Computing, Kyung Hee University.</p>
+          </div>
+        </section>
+
+        <section class="panel" id="license-and-redistribution-note">
+          <h2>License and Redistribution Note</h2>
+          <p>
+            The source magazine material comes from the Raspberry Pi Foundation and is licensed under
+            <strong>CC BY-NC-SA 3.0</strong>.
+          </p>
+          <p>
+            Before public release, make sure the final repository or hosting page includes the exact redistribution terms,
+            attribution requirements, and any usage restrictions that apply to this dataset package.
+          </p>
+        </section>
+      </main>
+
+      <aside class="side">
+        <nav class="panel toc" aria-label="Section index">
+          <h2 class="toc-title">Index</h2>
+          <div class="toc-list">
+            <a href="#overview">Overview</a>
+            <a href="#descanning-process-overview">Descanning Process</a>
+            <a href="#dataset-statistics">Dataset Statistics</a>
+            <a href="#scanner-ids">Scanner IDs</a>
+            <a href="#data-structure">Data Structure</a>
+            <a href="#file-naming">File Naming</a>
+            <a href="#source-and-construction">Source and Construction</a>
+            <a href="#degradation-types">Degradation Types</a>
+            <a href="#intended-use">Intended Use</a>
+            <a href="#reported-benchmark-results">Benchmark Results</a>
+            <a href="#citation">Citation</a>
+            <a href="#references">References</a>
+            <a href="#license-and-redistribution-note">License</a>
+          </div>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
