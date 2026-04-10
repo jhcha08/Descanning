@@ -232,9 +232,3 @@ If you use DESCAN-18K in your research, please cite:
 <img src="assets/enc-lab-icon.png" alt="Efficient Neural Computing Lab icon" width="72" />
 
 ---
-
-## License and Redistribution Note
-
-The paper states that the source magazine material comes from the Raspberry Pi Foundation and is licensed under **CC BY-NC-SA 3.0**.
-
-Before public release, make sure the final repository or hosting page includes the exact redistribution terms, attribution requirements, and any usage restrictions that apply to this dataset package.
