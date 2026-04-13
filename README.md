@@ -4,6 +4,7 @@
 
 [![Paper PDF](https://img.shields.io/badge/arXiv-2402.05350-b31b1b.svg)](https://arxiv.org/pdf/2402.05350)
 [![AAAI 2024](https://img.shields.io/badge/AAAI-2024-blue.svg)](https://arxiv.org/abs/2402.05350)
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/ENCLab/DESCAN-18K)
 
 ---
 
@@ -19,9 +20,10 @@
 8. [Degradation Types](#degradation-types)
 9. [Intended Use](#intended-use)
 10. [Benchmark Results](#reported-benchmark-results)
-11. [Citation](#citation)
-12. [References](#references)
-13. [License](#license-and-redistribution-note)
+11. [Dataset Link](#dataset-link)
+12. [Citation](#citation)
+13. [References](#references)
+14. [License](#license-and-redistribution-note)
 
 ---
 
@@ -205,6 +207,11 @@ The paper states that the DescanDiffusion variants outperform competing methods 
 
 ---
 
+## Dataset Link
+
+- Hugging Face: https://huggingface.co/datasets/ENCLab/DESCAN-18K
+
+
 ## Citation
 
 If you use DESCAN-18K in your research, please cite:
@@ -227,6 +234,7 @@ If you use DESCAN-18K in your research, please cite:
 | --- | --- |
 | Paper | https://arxiv.org/abs/2402.05350 |
 | Code | https://github.com/jhcha08/Descanning |
+| Dataset | https://huggingface.co/datasets/ENCLab/DESCAN-18K |
 | Lab | https://mlvc.khu.ac.kr/ |
 
 <img src="assets/enc-lab-icon.png" alt="Efficient Neural Computing Lab icon" width="72" />
