@@ -1,4 +1,8 @@
-# [AAAI 2024] Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model
+# [AAAI 2024] Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model 
+
+[![Paper PDF](https://img.shields.io/badge/arXiv-2402.05350-b31b1b.svg)](https://arxiv.org/pdf/2402.05350) 
+[![AAAI 2024](https://img.shields.io/badge/AAAI-2024-blue.svg)](https://arxiv.org/abs/2402.05350) 
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/ENCLab/DESCAN-18K) 
 
 [Junghun Cha](https://www.linkedin.com/in/junghun-cha-5a102b1bb/)<sup>1*</sup>, [Ali Haider]()<sup>1*</sup>, [Seoyun Yang](https://kr.linkedin.com/in/seoyun-yang-9b1323218)<sup>1</sup>, [Hoeyeong Jin](https://www.linkedin.com/in/hoeyeong-jin-91987026b/)<sup>1</sup>, [Subin Yang]()<sup>1</sup>, [A. F. M. Shahab Uddin](https://scholar.google.com/citations?user=Ckkj9gQAAAAJ&hl=en)<sup>2</sup>, [Jaehyoung Kim](https://github.com/crux153)<sup>1</sup>, [Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>3</sup>, [Sung-Ho Bae](https://scholar.google.co.kr/citations?user=EULut5oAAAAJ&hl=ko)<sup>1</sup>
 
@@ -8,14 +12,10 @@
 
 This repository is the official PyTorch implementation of "Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model".
 
-We will open our dataset DESCAN-18K and pre-trained models as public soon! Please kindly wait for updates.
+You can download our dataset DESCAN-18K from Hugging Face: https://huggingface.co/datasets/ENCLab/DESCAN-18K 
 
-[[Paper](https://www.arxiv.org/abs/2402.05350)]
-
-## 💾 Dataset: DESCAN-18K
-
-![degradation_final2](https://github.com/jhcha08/Descanning/assets/55647934/1fb77feb-8b8e-4457-b98f-ca5a53e9b79c)
-
+Detailed information about DESCAN-18K are below. 
+  
 <!--
 You can download our dataset DESCAN-18K from these links: [scan1](https://drive.google.com/file/d/1Uanl0NPtVxVOwGb3yzGviopW-j0Gktc6/view?usp=sharing), [scan2](https://drive.google.com/file/d/16DxzIizRdxzrul1T-dgoIzhDn9szFpvK/view?usp=sharing), [clean](https://drive.google.com/file/d/1uB8rFMOjokdYz2ynSPHnxqgqpOAEW707/view?usp=sharing), [validation and test](https://drive.google.com/file/d/12txQIib3ycHcl4f8DscziVtRdN0qZZw1/view?usp=sharing)
 
@@ -96,6 +96,7 @@ A significant volume of analog information, i.e., documents and images, have bee
 
 ## News
 
+💾 [2024-03-26] Our datasets are released.  
 ✨ [2024-03-26] Our codes are released.  
 📃 [2024-02-08] Our paper is uploaded on arXiv.  
 🎉 [2023-12-09] Our paper is accepted by AAAI 2024.  
@@ -117,10 +118,6 @@ If this repository is useful to your research, please consider citing our works!
 # DESCAN-18K
 
 > **DESCAN-18K** is a dataset for the **descanning** task. This dataset contains **18,360 paired real scanned/original images** for recovering original digital images from their real scanned counterparts.
-
-[![Paper PDF](https://img.shields.io/badge/arXiv-2402.05350-b31b1b.svg)](https://arxiv.org/pdf/2402.05350)
-[![AAAI 2024](https://img.shields.io/badge/AAAI-2024-blue.svg)](https://arxiv.org/abs/2402.05350)
-[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/ENCLab/DESCAN-18K)
 
 ---
 
@@ -326,21 +323,6 @@ The paper states that the DescanDiffusion variants outperform competing methods 
 ## Dataset Link
 
 - Hugging Face: https://huggingface.co/datasets/ENCLab/DESCAN-18K
-
-
-## Citation
-
-If you use DESCAN-18K in your research, please cite:
-
-```bibtex
-@article{cha2024descanning,
-  title={Descanning: From Scanned to the Original Images with a Color Correction Diffusion Model},
-  author={Cha, Junghun and Haider, Ali and Yang, Seoyun and Jin, Hoeyeong and Yang, Subin
-          and Uddin, AFM and Kim, Jaehyoung and Kim, Soo Ye and Bae, Sung-Ho},
-  journal={arXiv preprint arXiv:2402.05350},
-  year={2024}
-}
-```
 
 ---
 
